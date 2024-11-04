@@ -1,0 +1,25 @@
+5.2 (5 points) What trend do you see in the plot you created in Task 1 for the KNN
+Classifier? Does the trend you see make sense for the dataset? At which k value
+do you see the highest classification accuracy?
+K=5 has the highest accuracy. At smaller k values, although they are fairly accurate, the accuracy
+is decreasing a bit. When we make k too small, we end up getting more noise and may be too sensitive to
+outliers, which can cause overfitting. On the other hand, when k is larger than 5, we have the opposite problem,
+accuracy declines because the model considers neighbors that are too distant in the voting, leading to a smoothed
+out classification boundary, resulting in lower accuracy. This trend makes sense. There is
+generally an optimum value of k, where we see that outside of its range we see a decrease in accuracy,
+either due to noise (small k) or considering neighbors that are too distant for voting (large k).
+5.3 (5 points) What accuracy, TP, TN, FP, and FN did you obtain for the best k
+KNN Classifier? And for the Agglomerative Clustering model? Compare and
+contrast the performance of the two models on classifying our dataset based on
+the measures you computed. Which model does a better job at classification and
+why? Can you explain your intuition about why you might see the results you
+see?
+Agglomerative Clustering - TP: 15, TN: 1, FP: 14, FN: 0, Accuracy: 0.53
+Best KNN (k=5) - TP: 14, TN: 11, FP: 4, FN: 1, Accuracy: 0.83
+The KNN was superior to agglomerative(aggy) clustering, with a accuracy of .83 compared to aggy,
+which had only .53 (a bad score).The aggy method had a high 14 false positive rate. Although aggy did
+not make false negatives, it tended to make a lot of false positives. Aggy is a unsupervised method,
+and only grouped data based on similarity without any label guidance. This made it tend to get more false
+positives. KNN on the other hand is a supervised method, which allowed it to utilize class labels during the learning
+process, resulting in a more accurate classification. This supervision enables KNN to more effectively distinguish between
+ classes, reducing both false positives and false negatives compared to aggy Clustering.
